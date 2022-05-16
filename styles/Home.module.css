@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    user-select: none;
 }
 
 .header {
@@ -37,7 +38,22 @@
     font-weight: bold;
 }
 
+.reset_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    font-size: 2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.reset_button:hover {
+    transform: scale(1.15);
+    color: white;
+}
+
 .card_grid__title_right {
+    position: relative;
     border-left: 0.25px solid #424250;
 }
 
@@ -74,13 +90,6 @@
     color: #db5461;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-    color: #0070f3;
-    border-color: #0070f3;
-}
-
 .footer {
     font-weight: bold;
     display: flex;
@@ -89,6 +98,7 @@
     border-top: 1px solid #636363;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 @media screen and (min-width: 700px) {

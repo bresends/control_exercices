@@ -2,9 +2,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
-import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
-import styles from '../styles/Home.module.css';
 import { IconContext } from 'react-icons';
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
+import { BiReset } from 'react-icons/bi';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
     const [totalAmount, setTotalAmount] = useState(0);
@@ -32,12 +33,25 @@ const Home: NextPage = () => {
                         </p>
                     </div>
                     <div className={styles.card_grid__title_right}>
+                        <IconContext.Provider
+                            value={{
+                                className: styles.reset_button,
+                            }}
+                        >
+                            <BiReset
+                                onClick={() => {
+                                    setTotalAmount(0);
+                                    setWrongAmount(0);
+                                }}
+                            />
+                        </IconContext.Provider>
                         <p>Erros</p>
                         <p className={styles.card_grid__result_right}>
                             {wrongAmount}
                         </p>
                     </div>
                 </div>
+
                 <div className={styles.card_grid}>
                     <p
                         className={styles.card_grid__button}
