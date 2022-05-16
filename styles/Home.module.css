@@ -19,6 +19,10 @@
     color: white;
 }
 
+.header h1 {
+    font-size: clamp(1.5rem, -0.875rem + 8.333vw, 2.5rem);
+}
+
 .card_grid {
     width: 95vw;
     max-width: 76rem;
@@ -31,6 +35,7 @@
 
 .card_grid__title,
 .card_grid__title_right {
+    padding: 1rem 0;
     text-align: center;
     margin: 0;
     font-size: min(15vw, 1rem);
@@ -60,7 +65,7 @@
 .card_grid__button_right {
     text-align: center;
     border-top: 0.25px solid #424250;
-    padding: min(15vw, 3rem) 0;
+    padding: min(20vw, 2rem) 0;
     margin: 0;
     transition: all 0.2s ease-in-out;
 }
@@ -76,7 +81,7 @@
 
 .card_grid__result,
 .card_grid__result_right {
-    font-size: min(20vw, 3rem);
+    font-size: min(15vw, 3rem);
     margin: 0;
     color: #31c48d;
 }
@@ -85,13 +90,13 @@
 }
 
 .card_icon_right {
-    font-size: min(15vw, 3rem);
+    font-size: min(10vw, 4rem);
     color: #31c48d;
     transition: all 0.2s ease-in-out;
 }
 
 .card_icon_wrong {
-    font-size: min(15vw, 3rem);
+    font-size: min(10vw, 4rem);
     color: #db5461;
     transition: all 0.2s ease-in-out;
 }
@@ -123,5 +128,10 @@
     .card_grid__result,
     .card_grid__result_right {
         font-size: min(20vw, 10rem);
+    }
+
+    .card_grid__button,
+    .card_grid__button_right {
+        padding: min(20vw, 4rem) 0;
     }
 }
