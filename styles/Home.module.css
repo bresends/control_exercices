@@ -32,7 +32,6 @@
 .card_grid__title,
 .card_grid__title_right {
     text-align: center;
-    transition: color 0.15s ease, border-color 0.15s ease;
     margin: 0;
     font-size: min(15vw, 1rem);
     font-weight: bold;
@@ -60,10 +59,15 @@
 .card_grid__button,
 .card_grid__button_right {
     text-align: center;
-    transition: color 0.15s ease, border-color 0.15s ease;
     border-top: 0.25px solid #424250;
     padding: min(15vw, 3rem) 0;
     margin: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.card_grid__button:hover,
+.card_grid__button_right:hover {
+    background-color: hsl(240, 9%, 25%);
 }
 
 .card_grid__button_right {
@@ -83,11 +87,17 @@
 .card_icon_right {
     font-size: min(15vw, 3rem);
     color: #31c48d;
+    transition: all 0.2s ease-in-out;
 }
 
 .card_icon_wrong {
     font-size: min(15vw, 3rem);
     color: #db5461;
+    transition: all 0.2s ease-in-out;
+}
+.card_icon_right:hover,
+.card_icon_wrong:hover {
+    transform: scale(1.2);
 }
 
 .footer {
