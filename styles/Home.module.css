@@ -42,7 +42,7 @@
     font-weight: bold;
 }
 
-.reset_button {
+.toggle_button {
     position: absolute;
     top: 0;
     right: 0;
@@ -51,6 +51,16 @@
     transition: all 0.2s ease-in-out;
 }
 
+.reset_button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    font-size: 2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.toggle_button:hover,
 .reset_button:hover {
     transform: scale(1.15);
     color: white;

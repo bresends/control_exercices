@@ -4,17 +4,21 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { IconContext } from 'react-icons';
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
-import { BiReset } from 'react-icons/bi';
+import { BiReset, BiToggleLeft, BiToggleRight } from 'react-icons/bi';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
     const [totalAmount, setTotalAmount] = useState(0);
     const [wrongAmount, setWrongAmount] = useState(0);
+    const [toggle, setToggle] = useState(false);
 
     return (
         <div className={styles.container}>
             <Head>
-                <title>Controle de Exercícios</title>
+                <title>
+                    Controle de Exercícios ({totalAmount}/
+                    {totalAmount - wrongAmount})
+                </title>
                 <meta name="description" content="Created by bruno Resende" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -35,6 +39,42 @@ const Home: NextPage = () => {
                     <div className={styles.card_grid__title_right}>
                         <IconContext.Provider
                             value={{
+                                className: styles.toggle_button,
+                            }}
+                        >
+                            {!toggle ? (
+                                <div>
+                                    <BiToggleLeft
+                                        onClick={() => {
+                                            setToggle(true);
+                                        }}
+                                    />
+                                    <p>Erros</p>
+                                    <p
+                                        className={
+                                            styles.card_grid__result_right
+                                        }
+                                    >
+                                        {wrongAmount}
+                                    </p>
+                                </div>
+                            ) : (
+                                <div>
+                                    <BiToggleRight
+                                        onClick={() => {
+                                            setToggle(false);
+                                        }}
+                                    />
+                                    <p>Acertos</p>
+                                    <p className={styles.card_grid__result}>
+                                        {totalAmount - wrongAmount}
+                                    </p>
+                                </div>
+                            )}
+                        </IconContext.Provider>
+
+                        <IconContext.Provider
+                            value={{
                                 className: styles.reset_button,
                             }}
                         >
@@ -45,10 +85,6 @@ const Home: NextPage = () => {
                                 }}
                             />
                         </IconContext.Provider>
-                        <p>Erros</p>
-                        <p className={styles.card_grid__result_right}>
-                            {wrongAmount}
-                        </p>
                     </div>
                 </div>
 
